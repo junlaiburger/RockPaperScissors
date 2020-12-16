@@ -1,3 +1,6 @@
+function playerPlay() {
+
+}
 function computerPlay() {
   // randomly returns either 'Rock', 'Paper' or 'Scissors'
   // the problem is figuring out what algorithm to choose
@@ -52,14 +55,16 @@ function playRound(playerSelection, computerSelection) {
     console.log(playerSelection, computerSelection, winner)
 }
 
-const playerSelection = "rock";
-const computerSelection = computerPlay();
+let playerSelection = "";
+let computerSelection = "";
 console.log(playRound(playerSelection, computerSelection));
 
 function game() {
   let rounds = 5;
   for (let i = 1; i <= rounds; i++) {
     console.log('Round ' + i);
+    playerSelection = ;
+    computerSelection = computerPlay();
     playRound(playerSelection,computerSelection)
   }
 }
