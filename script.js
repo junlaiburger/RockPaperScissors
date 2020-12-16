@@ -1,6 +1,18 @@
 function playerPlay() {
-
+  // gets input from the player
+    let hand = ""
+    let loop = true
+    while (loop) {
+      hand = prompt("Please input rock, paper, or scissors", "");
+      if (hand.toLowerCase() == "rock" || hand.toLowerCase() == "paper" || hand.toLowerCase() == "scissors") {
+        console.log(hand);
+        return hand
+      } else {
+        alert('Invalid entry')
+      }
+    }
 }
+
 function computerPlay() {
   // randomly returns either 'Rock', 'Paper' or 'Scissors'
   // the problem is figuring out what algorithm to choose
@@ -63,7 +75,7 @@ function game() {
   let rounds = 5;
   for (let i = 1; i <= rounds; i++) {
     console.log('Round ' + i);
-    playerSelection = ;
+    playerSelection = playerPlay();
     computerSelection = computerPlay();
     playRound(playerSelection,computerSelection)
   }
