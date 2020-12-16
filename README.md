@@ -1,2 +1,2 @@
 # RockPaperScissors
-Playing rock paper scissors against the computer, in console
+Play rock paper scissors against the computer, in console!
