@@ -34,6 +34,10 @@ function computerPlay() {
   console.log(hand)
 }
 
+let playerScore = 0;
+let computerScore = 0;
+let tie = 0;
+
 function playRound(playerSelection, computerSelection) {
   // your code here!
   let winner = "";
@@ -41,30 +45,39 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection.toLowerCase() == 'rock') {
     if (computerSelection.toLowerCase() == 'rock') {
       winner = 'Tie';
+      tie++; 
     } else if (computerSelection.toLowerCase() == 'paper') {
       winner = 'Computer';
+      computerScore++;
     } else {
       winner = 'Player';
+      playerScore++;
     }
   } else if (playerSelection.toLowerCase() == 'paper') {
     if (computerSelection.toLowerCase() == 'rock') {
       winner = 'Player';
+      playerScore++;
     } else if (computerSelection.toLowerCase() == 'paper') {
       winner = 'Tie';
+      tie++;
     } else {
       winner = 'Computer';
+      computerScore++;
     }
   } else {
     if (computerSelection.toLowerCase() == 'rock') {
       winner = 'Computer';
+      computerScore++;
     } else if (computerSelection.toLowerCase() == 'paper') {
       winner = 'Player';
+      playerScore++;
     } else {
       winner = 'Tie';
+      tie++;
     }
   }
   // the game will break if the player inputs a string other than rock paper scissors
-    console.log(playerSelection, computerSelection, winner)
+    console.log('Player:', playerSelection[0].toUpperCase(),playerSelection[1:], '\n','Computer:', computerSelection, '\n','Winner:', winner)
 }
 
 let playerSelection = "";
@@ -78,5 +91,12 @@ function game() {
     playerSelection = playerPlay();
     computerSelection = computerPlay();
     playRound(playerSelection,computerSelection)
+  }
+  if (playerScore > computerScore) {
+    console.log("'Player'", 'wins!', 'Score:', playerScore,':',computerScore,',', ties, 'ties')
+  } else if (playerScore < computerScore) {
+    console.log("'Computer'", 'wins!', 'Score:', computerScore,':',playerScore,',', ties, 'ties')
+  } else {
+    console.log("'Tie!'", 'Score: ', computerScore, ':', playerscore,',', ties, 'ties')
   }
 }
