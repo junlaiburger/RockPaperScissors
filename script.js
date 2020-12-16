@@ -77,7 +77,7 @@ function playRound(playerSelection, computerSelection) {
     }
   }
   // the game will break if the player inputs a string other than rock paper scissors
-    console.log('Player:', playerSelection[0].toUpperCase(),playerSelection[1:], '\n','Computer:', computerSelection, '\n','Winner:', winner)
+    console.log('Player:' + playerSelection, '\n','Computer:', computerSelection, '\n','Winner:', winner)
 }
 
 let playerSelection = "";
@@ -93,10 +93,10 @@ function game() {
     playRound(playerSelection,computerSelection)
   }
   if (playerScore > computerScore) {
-    console.log("'Player'", 'wins!', 'Score:', playerScore,':',computerScore,',', ties, 'ties')
+    console.log("'Player' wins!\n Score: " + playerScore + ':' + computerScore + '\n Ties: ' + (tie-1))
   } else if (playerScore < computerScore) {
-    console.log("'Computer'", 'wins!', 'Score:', computerScore,':',playerScore,',', ties, 'ties')
+    console.log("'Computer' wins!\n Score: " + computerScore + ':' + playerScore + '\n Ties: ' + (tie-1))
   } else {
-    console.log("'Tie!'", 'Score: ', computerScore, ':', playerscore,',', ties, 'ties')
+    console.log("'Tie!'\n Score: " + computerScore + ':' + playerScore + '\n Ties: ' + (tie-1))
   }
 }
