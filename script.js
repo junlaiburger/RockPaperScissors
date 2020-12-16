@@ -14,6 +14,7 @@ function computerPlay() {
     hand = "Paper";
   }
   
+  return hand
   console.log(seconds)
   console.log(hand)
 }
@@ -56,5 +57,9 @@ const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
 
 function game() {
-  playRound;
+  let rounds = 5;
+  for (let i = 1; i <= rounds; i++) {
+    console.log('Round ' + i);
+    playRound(playerSelection,computerSelection)
+  }
 }
